@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/AsyncLoggingTest.dir/AsyncLoggingTest.cc.o"
-  "../../../../src/logger/test/AsyncLoggingTest.pdb"
   "../../../../src/logger/test/AsyncLoggingTest"
+  "../../../../src/logger/test/AsyncLoggingTest.pdb"
+  "CMakeFiles/AsyncLoggingTest.dir/AsyncLoggingTest.cc.o"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/echoServerAsync.dir/echoServerAsync.cc.o"
-  "../../example/echoServerAsync.pdb"
   "../../example/echoServerAsync"
+  "../../example/echoServerAsync.pdb"
+  "CMakeFiles/echoServerAsync.dir/echoServerAsync.cc.o"
 )
 
 # Per-language clean rules from dependency scanning.

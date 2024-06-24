@@ -7,17 +7,8 @@
 
 const char Buffer::kCRLF[] = "\r\n";
 
-/**
- * 从fd上读取数据 Poller工作在LT模式
- * Buffer缓冲区是有大小的！ 但是从fd上读取数据的时候 却不知道tcp数据的最终大小
- *
- * @description: 从socket读到缓冲区的方法是使用readv先读至buffer_，
- * Buffer_空间如果不够会读入到栈上65536个字节大小的空间，然后以append的
- * 方式追加入buffer_。既考虑了避免系统调用带来开销，又不影响数据的接收。
- **/
 ssize_t Buffer::readFd(int fd, int *saveErrno)
 {
-    // 栈额外空间，用于从套接字往出读时，当buffer_暂时不够用时暂存数据，待buffer_重新分配足够空间后，在把数据交换给buffer_。
     char extrabuf[65536] = {0}; // 栈上内存空间 65536/1024 = 64KB
 
     /*

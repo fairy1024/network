@@ -1,0 +1,164 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "/home/zhong/webServer/tiny-network/src/mysql/test/MysqlPoolTest"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"src/mysql/test/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 8,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " "
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/base"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/net"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/net/poller"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/net/http"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/timer"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/logger"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/memory"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/zhong/webServer/tiny-network/src/mysql"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "tiny_network::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "MysqlPoolTest::@8b4b2c4c1d1c391cea17",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/zhong/webServer/tiny-network/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "../../../../lib/libtiny_network.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lmysqlclient",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "MysqlPoolTest",
+	"nameOnDisk" : "MysqlPoolTest",
+	"paths" : 
+	{
+		"build" : "src/mysql/test",
+		"source" : "src/mysql/test"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/mysql/test/MysqlPoolTest.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
