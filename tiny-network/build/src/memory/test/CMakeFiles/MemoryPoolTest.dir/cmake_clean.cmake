@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MemoryPoolTest.dir/MemoryPoolTest.cc.o"
-  "../../../../src/memory/test/MemoryPoolTest.pdb"
   "../../../../src/memory/test/MemoryPoolTest"
+  "../../../../src/memory/test/MemoryPoolTest.pdb"
+  "CMakeFiles/MemoryPoolTest.dir/MemoryPoolTest.cc.o"
 )
 
 # Per-language clean rules from dependency scanning.

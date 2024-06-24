@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MysqlPoolTest.dir/MysqlPoolTest.cc.o"
-  "../../../../src/mysql/test/MysqlPoolTest.pdb"
   "../../../../src/mysql/test/MysqlPoolTest"
+  "../../../../src/mysql/test/MysqlPoolTest.pdb"
+  "CMakeFiles/MysqlPoolTest.dir/MysqlPoolTest.cc.o"
 )
 
 # Per-language clean rules from dependency scanning.

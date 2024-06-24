@@ -4,11 +4,7 @@
 
 std::atomic_int32_t Thread::numCreated_(0);
 
-/**
- * TODO:error  
- * default argument given for parameter 2 of ‘Thread::Thread(Thread::ThreadFunc, const string&)’GCC
- * 默认参数在定义和声明中只能出现一次，不能声明和定义都有默认参数
- */
+
 Thread::Thread(ThreadFunc func, const std::string &name) :
     started_(false), // 还未开始
     joined_(false),  // 还未设置等待线程

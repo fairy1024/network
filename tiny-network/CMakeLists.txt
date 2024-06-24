@@ -58,10 +58,10 @@ set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/src/ DESTINATION include/tiny_network
         FILES_MATCHING PATTERN "*.h")
 
-# 加载example
+
+
 add_subdirectory(example)
 
-# 加载http
 add_subdirectory(src/http)
 
 add_subdirectory(src/logger/test)
