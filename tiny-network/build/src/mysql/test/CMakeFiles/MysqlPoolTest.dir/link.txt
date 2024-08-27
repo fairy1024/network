@@ -1,1 +1,0 @@
-/usr/bin/g++    -rdynamic CMakeFiles/MysqlPoolTest.dir/MysqlPoolTest.cc.o  -o ../../../../src/mysql/test/MysqlPoolTest  -Wl,-rpath,/home/zhong/webServer/tiny-network/lib ../../../../lib/libtiny_network.so -lpthread -lmysqlclient 

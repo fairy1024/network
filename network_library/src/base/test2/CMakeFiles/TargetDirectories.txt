@@ -1,0 +1,3 @@
+/home/zhong/webServer/tiny-network/src/base/test2/CMakeFiles/rebuild_cache.dir
+/home/zhong/webServer/tiny-network/src/base/test2/CMakeFiles/edit_cache.dir
+/home/zhong/webServer/tiny-network/src/base/test2/CMakeFiles/main.dir

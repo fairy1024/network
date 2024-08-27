@@ -1,1 +1,0 @@
-/usr/bin/g++    -rdynamic CMakeFiles/AsyncLoggingTest.dir/AsyncLoggingTest.cc.o  -o ../../../../src/logger/test/AsyncLoggingTest  -Wl,-rpath,/home/zhong/webServer/tiny-network/lib ../../../../lib/libtiny_network.so -lpthread -lmysqlclient 

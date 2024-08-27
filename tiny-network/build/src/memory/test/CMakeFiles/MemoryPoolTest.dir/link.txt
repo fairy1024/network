@@ -1,1 +1,0 @@
-/usr/bin/g++    -rdynamic CMakeFiles/MemoryPoolTest.dir/MemoryPoolTest.cc.o  -o ../../../../src/memory/test/MemoryPoolTest  -Wl,-rpath,/home/zhong/webServer/tiny-network/lib ../../../../lib/libtiny_network.so -lpthread -lmysqlclient 
