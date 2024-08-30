@@ -67,8 +67,6 @@ void EventLoop::loop()
     looping_ = true;
     quit_ = false;
 
-    LOG_INFO << "EventLoop " << this << " start looping";
-
     while (!quit_)
     {
         // 清空activeChannels_

@@ -1,4 +1,4 @@
-header_path = -I/home/zhong/webServer/tiny-network/src/base -I/home/zhong/webServer/tiny-network/src/net
+header_path = -I../../base -I../../net
 LIBS=-lpthread
 CFLAGS= -g -Wall
 

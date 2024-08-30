@@ -115,10 +115,10 @@ bool HttpContext::parseRequest(Buffer* buf, Timestamp receiveTime)
                 hasMore = false;
             }
         }
-        // 解析请求体，可以看到这里没有做出处理，只支持GET请求
+        // 解析请求体
         else if (state_ == kExpectBody)
         {
-            // FIXME:
+            //当前只支持get请求，故不实现
         }
     }
     return ok;

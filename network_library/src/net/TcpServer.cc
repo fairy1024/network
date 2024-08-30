@@ -22,7 +22,7 @@ TcpServer::TcpServer(EventLoop *loop,
     : loop_(CheckLoopNotNull(loop)),
     ipPort_(listenAddr.toIpPort()),
     name_(nameArg),
-    acceptor_(new Acceptor(loop, listenAddr, option == kReusePort)),
+    acceptor_(new Acceptor(loop, listenAddr, option)),
     threadPool_(new EventLoopThreadPool(loop, name_)),
     connectionCallback_(),
     messageCallback_(),
@@ -80,7 +80,6 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
     ++nextConnId_;  
     // 新连接名字
     std::string connName = name_ + buf;
-
     LOG_INFO << "TcpServer::newConnection [" << name_.c_str() << "] - new connection [" << connName.c_str() << "] from " << peerAddr.toIpPort().c_str();
     
     // 通过sockfd获取其绑定的本机的ip地址和端口信息

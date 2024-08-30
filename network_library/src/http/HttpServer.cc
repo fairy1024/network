@@ -58,6 +58,7 @@ void HttpServer::onMessage(const TcpConnectionPtr& conn,
 
 #if 0
     // 打印请求报文
+    printf("\n");
     std::string request = buf->GetBufferAllAsString();
     std::cout << request << std::endl;
 #endif

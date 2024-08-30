@@ -32,6 +32,7 @@ void HttpResponse::appendToBuffer(Buffer* output) const
         output->append(header.second);
         output->append("\r\n");
     }
+    //分割响应行与响应体
     output->append("\r\n");
     output->append(body_); 
 }

@@ -24,15 +24,14 @@ EPollPoller::~EPollPoller()
 Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels)
 {
     // 高并发情况经常被调用，影响效率，使用debug模式可以手动关闭
-
     size_t numEvents = ::epoll_wait(epollfd_, &(*events_.begin()), 
                         static_cast<int>(events_.size()), timeoutMs);
     int saveErrno = errno;
     Timestamp now(Timestamp::now());
-
     // 有事件产生
     if (numEvents > 0)
     {
+        LOG_INFO << "有新事件";
         fillActiveChannels(numEvents, activeChannels); // 填充活跃的channels
         // 对events_进行扩容操作
         if (numEvents == events_.size())
@@ -140,7 +139,6 @@ void EPollPoller::update(int operation, Channel *channel)
     event.events = channel->events();
     event.data.fd = fd;
     event.data.ptr = channel;
-
     if (::epoll_ctl(epollfd_, operation, fd, &event) < 0)
     {
         if (operation == EPOLL_CTL_DEL)

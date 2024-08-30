@@ -4,11 +4,33 @@
 #include "HttpContext.h"
 #include "Timestamp.h"
 
+
+#include<iostream>
+#include<cstring>
+#include<sys/epoll.h>
+#include<sys/socket.h>
+#include<unistd.h>
+#include<netinet/in.h>
+#include <sys/eventfd.h>
+#include<vector>
+#include<map>
+
+//最大连接数
+const int MAX_CONN = 1024;
+
+struct Client
+{
+    int sockfd;
+    std::string name;//名字
+};
+
+
 extern char favicon[555];
 bool benchmark = false;
 
 void onRequest(const HttpRequest& req, HttpResponse* resp)
 {
+#if 1
     std::cout << "Headers " << req.methodString() << " " << req.path() << std::endl;
     
     // 打印头部
@@ -20,7 +42,7 @@ void onRequest(const HttpRequest& req, HttpResponse* resp)
             std::cout << header.first << ": " << header.second << std::endl;
         }
     }
-
+#endif
     if (req.path() == "/")
     {
         resp->setStatusCode(HttpResponse::k200Ok);
@@ -28,8 +50,8 @@ void onRequest(const HttpRequest& req, HttpResponse* resp)
         resp->setContentType("text/html");
         resp->addHeader("Server", "Muduo");
         std::string now = Timestamp::now().toFormattedString();
-        resp->setBody("<html><head><title>This is title</title></head>"
-            "<body><h1>Hello</h1>Now is " + now +
+        resp->setBody("<html><head><title>Me is webpage</title></head>"
+            "<body><h1>Hello, welcome to this webpage!</h1>Now is " + now +
             "</body></html>");
     }
     else if (req.path() == "/favicon.ico")
@@ -39,13 +61,15 @@ void onRequest(const HttpRequest& req, HttpResponse* resp)
         resp->setContentType("image/png");
         resp->setBody(std::string(favicon, sizeof favicon));
     }
-    else if (req.path() == "/hello")
+    else if (req.path() == "/goodbye")
     {
         resp->setStatusCode(HttpResponse::k200Ok);
         resp->setStatusMessage("OK");
-        resp->setContentType("text/plain");
+        resp->setContentType("text/html");
         resp->addHeader("Server", "Muduo");
-        resp->setBody("hello, world!\n");
+        resp->setBody("<html><head><title>Me is webpage</title></head>"
+            "<body><h1>Goodbye</h1>" 
+            "</body></html>");
     }
     else
     {
@@ -59,10 +83,11 @@ void onRequest(const HttpRequest& req, HttpResponse* resp)
 int main(int argc, char* argv[])
 {
     EventLoop loop;
-    HttpServer server(&loop, InetAddress(8080), "http-server");
+    HttpServer server(&loop, InetAddress(9999), "http-server");
     server.setHttpCallback(onRequest);
     server.start();
     loop.loop();
+    return 0;
 }
 
 char favicon[555] = {

@@ -7,8 +7,5 @@ set(HTTP_SRCS
 )
 include_directories (../base ../net ../timer ../logger)
 add_executable(HttpServer ${HTTP_SRCS})
-
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/test2)
-
 target_link_libraries(HttpServer tiny_network)
 

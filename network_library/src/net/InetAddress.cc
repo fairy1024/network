@@ -14,7 +14,7 @@ std::string InetAddress::toIp() const
     char buf[64] = {0};
     ::inet_ntop(AF_INET, &addr_.sin_addr, buf, sizeof(buf));
     return buf;
-}
+} 
 
 std::string InetAddress::toIpPort() const
 {
@@ -37,7 +37,7 @@ uint16_t InetAddress::toPort() const
 #include <iostream>
 int main()
 {
-    InetAddress addr(8080,"192.168.4.3");
+    InetAddress addr(8080);
     std::cout << addr.toIpPort() << std::endl;
     printf("%s\n", addr.toIp().c_str());
 }

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/echoServer.dir/echoServer.cc.o  -o ../../example/echoServer  -Wl,-rpath,/home/zhong/webServer/network_library/lib ../../lib/libtiny_network.so -lpthread -lmysqlclient 
